@@ -1,0 +1,33 @@
+package com.len;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.scheduling.annotation.EnableScheduling;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import tk.mybatis.spring.annotation.MapperScan;
+
+
+@EnableWebMvc
+@SpringBootApplication
+@EnableTransactionManagement
+@ComponentScan({"com.len"})
+@MapperScan(basePackages = {"com.len.mapper"})
+@EnableDiscoveryClient
+@EnableScheduling
+@EnableAutoConfiguration(exclude = {
+        org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration.class
+})
+public class Application {
+
+    public static void main(String[] args) {
+        ApplicationContext applicationContext = SpringApplication.run(Application.class, args);
+        System.out.println("Server start success");
+    }
+
+
+}
