@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <title>个人项目管理系统后台</title>
+  <title>海职院后台管理系统</title>
   <link rel="stylesheet" href="${re.contextPath}/plugin/layui/css/layui.css" media="all" />
   <link rel="stylesheet" href="${re.contextPath}/plugin/plugins/font-awesome/css/font-awesome.min.css" media="all" />
   <link rel="stylesheet" href="${re.contextPath}/plugin/build/css/app.css" media="all" />
@@ -20,10 +20,10 @@
 <body class="kit-theme">
 <div class="layui-layout layui-layout-admin kit-layout-admin">
   <div class="layui-header">
-    <div class="layui-logo">个人项目管理系统后台</div>
+    <div class="layui-logo">海职院后台管理系统</div>
     <div class="layui-logo kit-logo-mobile"></div>
     <div class="layui-hide-xs">
-    <ul class="layui-nav layui-layout-left kit-nav">
+  <#--  <ul class="layui-nav layui-layout-left kit-nav">
       <li class="layui-nav-item"><a href="javascript:s();">会员管理</a></li>
         <li class="layui-nav-item"><a href="javascript:;" kit-target data-options="{url:'/article/showArticle',icon:'&#xe658;',title:'文章管理',id:'966'}">文章管理</a></li>
       <li class="layui-nav-item">
@@ -34,7 +34,7 @@
           <dd><a href="javascript:;">授权管理</a></dd>
         </dl>
       </li>
-    </ul>
+    </ul>-->
     </div>
     <ul class="layui-nav layui-layout-right kit-nav">
       <li class="layui-nav-item">
@@ -53,11 +53,19 @@
       <li class="layui-nav-item">
         <a href="javascript:;">
         <#assign currentUser = Session["currentPrincipal"]>
+            <#if remindNum gt 0 >
+                <span class="layui-badge">${remindNum}</span>
+            </#if>
+
           <img src="${re.contextPath}/images/${currentUser.photo}" class="layui-nav-img">${currentUser.username}
         </a>
         <dl class="layui-nav-child">
-          <dd><a href="javascript:;" kit-target data-options="{url:'/person',icon:'&#xe658;',title:'基本资料',id:'966'}"><span>基本资料</span></a></dd>
-          <dd><a href="javascript:;">安全设置</a></dd>
+          <dd><a href="javascript:;" kit-target data-options="{url:'/person/me',icon:'&#xe658;',title:'基本资料',id:'966'}"><span>基本资料</span></a></dd>
+          <dd><a href="javascript:;" kit-target data-options="{url:'/person/remind',icon:'&#xe645;',title:'代办提醒',id:'967'}"><span>代办提醒</span>
+              <#if remindNum gt 0 >
+                <span class="layui-badge">${remindNum}</span>
+              </#if>
+          </a></dd>
         </dl>
       </li>
       <li class="layui-nav-item"><a href="logout"><i class="fa fa-sign-out" aria-hidden="true"></i> 注销</a></li>
@@ -101,7 +109,7 @@
   <div class="layui-footer">
   <!-- 底部固定区域 -->
   2019 &copy;
-  <a  href="#">董锦龙的个人项目后台管理系统</a> 网站备案：粤ICP备18131046号-1
+  <a  href="#">海职院后台管理系统</a> 网站备案：琼ICP备11000397号
 </div>
 </div>
 <script src="${re.contextPath}/plugin/layui/layui.js"></script>

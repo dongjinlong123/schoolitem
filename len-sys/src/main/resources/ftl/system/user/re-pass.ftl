@@ -20,17 +20,23 @@
       <fieldset class="layui-elem-field layui-field-title" style="margin-top: 10px;">
         <legend style="font-size:16px;">修改账户：${user.username}</legend>
       </fieldset>
+        <input type="hidden" value="${user.id}" name="id">
     </div>
+<@shiro.lacksRole name="admin">
     <div class="layui-form-item">
       <label for="pass" class="layui-form-label">
         <span class="x-red">*</span>原密码
       </label>
       <div class="layui-input-inline">
-        <input type="hidden" value="${user.id}" name="id">
+
         <input type="password"  id="pass" name="pass"  lay-verify="pass"
                autocomplete="off" class="layui-input">
       </div>
     </div>
+</@shiro.lacksRole>
+<@shiro.hasRole name="admin">
+    <input type="hidden"  id="pass" name="pass" >
+</@shiro.hasRole>
     <div class="layui-form-item">
       <label for="newPass" class="layui-form-label">
         <span class="x-red">*</span>新密码

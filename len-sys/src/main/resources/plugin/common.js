@@ -3,6 +3,20 @@
  * id :元素id
  * flag true:禁止输入，false 允许输入
  */
+
+function hideInputById(name,flag){
+    var $id= $("#"+name);
+    if(flag){
+        $id.val('');
+        $id.attr('disabled','disabled').css('background','#e6e6e6');
+    }
+    else{
+        $id.removeAttr('disabled').css('background','white')
+    }
+}
+
+
+
 function hideInputByClass(className,flag){
     var $id= $("."+className);
     if(flag){
@@ -34,3 +48,9 @@ function formatDateTime(inputTime) {
     second = second < 10 ? ('0' + second) : second;
     return y + '-' + m + '-' + d+' '+h+':'+minute+':'+second;
 };
+
+
+function readyOnlyInputById(name){
+    var $id= $("#"+name);
+    $id.css('background','#d2d2d25e');
+}

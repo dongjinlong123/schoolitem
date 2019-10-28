@@ -43,7 +43,18 @@ public class LoginRealm extends AuthorizingRealm {
         CurrentUser user = (CurrentUser) principalCollection.getPrimaryPrincipal();
         Set<String> realmNames = principalCollection.getRealmNames();
         List<String> realmNameList = new ArrayList<>(realmNames);
-        if ("BlogLogin".equals(realmNameList.get(0))) {
+        //根据用户获取角色 根据角色获取所有按钮权限
+        CurrentUser cUser = (CurrentUser) Principal.getSession().getAttribute("currentPrincipal");
+
+        for (CurrentRole cRole : cUser.getCurrentRoleList()) {
+            info.addRole(cRole.getRoleName());//添加角色名称
+        }
+        for (CurrentMenu cMenu : cUser.getCurrentMenuList()) {
+            if (!StringUtils.isEmpty(cMenu.getPermission())) {
+                info.addStringPermission(cMenu.getPermission());
+            }
+        }
+   /*     if ("BlogLogin".equals(realmNameList.get(0))) {
             String[] roles = JWTUtil.getRoles(user.getUsername());
             assert roles != null;
             for (String role : roles) {
@@ -60,7 +71,7 @@ public class LoginRealm extends AuthorizingRealm {
                     info.addStringPermission(cMenu.getPermission());
                 }
             }
-        }
+        }*/
 
         return info;
     }

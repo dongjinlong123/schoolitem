@@ -31,15 +31,13 @@ public class PersonController {
     @Autowired
     SysUserService userService;
 
-    @GetMapping()
+    @GetMapping("/me")
     public String toPerson(Model model) {
         CurrentUser principal = Principal.getPrincipal();
         if (principal == null) {
             return "/login";
         }
         String id = principal.getId();
-
-        List<Checkbox> checkboxList = userService.getUserRoleByJson(id);
         SysUser user = userService.selectByPrimaryKey(id);
         model.addAttribute("user", user);
         return "/system/person/me";
@@ -63,5 +61,16 @@ public class PersonController {
         jsonUtil.setMsg("修改成功");
         userService.updateCurrent(user);
         return jsonUtil;
+    }
+
+    @GetMapping("/remind")
+    public String remind(Model model) {
+        CurrentUser principal = Principal.getPrincipal();
+        if (principal == null) {
+            return "/login";
+        }
+        String id = principal.getId();
+       //根据用户ID查询到对应的代办信息列表
+        return "/system/person/remind";
     }
 }

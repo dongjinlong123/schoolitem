@@ -45,7 +45,7 @@
         <span class="x-red">*</span>用户名
       </label>
       <div class="layui-input-inline">
-        <input type="text"  id="uname" name="username"  lay-verify="username"
+        <input type="text"  id="uname" name="username" autocomplete="off" lay-verify="username"
                class="layui-input">
       </div>
       <div id="ms" class="layui-form-mid layui-word-aux">
@@ -58,7 +58,7 @@
         <span class="x-red">*</span>真实姓名
       </label>
       <div class="layui-input-inline">
-        <input type="text" id="realName" name="realName" lay-verify="realName"  class="layui-input">
+        <input type="text" id="realName" name="realName" lay-verify="realName" autocomplete="off" class="layui-input">
       </div>
     </div>
       <div class="layui-inline">
@@ -66,7 +66,7 @@
           <span class="x-red">*</span>年龄
         </label>
         <div class="layui-input-inline">
-          <input type="text" id="age" name="age"  lay-verify="number"
+          <input type="text" id="age" name="age" autocomplete="off"  lay-verify="number"
                   class="layui-input">
         </div>
       </div>
@@ -78,7 +78,7 @@
         <span class="x-red">*</span>密码
       </label>
       <div class="layui-input-inline">
-        <input type="password" id="password" name="password"  lay-verify="password"
+        <input type="password" id="password" name="password"  lay-verify="password" autocomplete="off"
                class="layui-input">
       </div>
       </div>
@@ -87,21 +87,35 @@
           <span class="x-red">*</span>确认密码
         </label>
         <div class="layui-input-inline">
-          <input type="password" id="l_repass" name="repass"  lay-verify="repass"
+          <input type="password" id="l_repass" name="repass"  lay-verify="repass" autocomplete="off"
                   class="layui-input">
         </div>
       </div>
     </div>
-    <div>
-      <label for="email" class="layui-form-label">
-        <span class="x-red"></span>邮箱
-      </label>
-      <div class="layui-input-block">
-        <input type="email" id="email" style="width: 93%" name="email"  lay-verify="email"
-                class="layui-input">
-        <input id="photo" name="photo" type="hidden">
-      </div>
+
+    <div class="layui-form-item">
+        <div class="layui-inline">
+            <label for="email" class="layui-form-label">
+              <span class="x-red"></span>邮箱
+            </label>
+            <div class="layui-input-inline">
+              <input type="email" id="email"  name="email"  lay-verify="email"  autocomplete="off"
+                      class="layui-input">
+              <input id="photo" name="photo" type="hidden">
+            </div>
+        </div>
+        <div class="layui-inline">
+            <label for="L_repass" class="layui-form-label">
+                <span class="x-red">*</span>手机号码
+            </label>
+            <div class="layui-input-inline">
+                <input type="phone" id="phone" name="phone"  lay-verify="phone" autocomplete="off"
+                       class="layui-input">
+            </div>
+        </div>
     </div>
+
+
       <div class="layui-form-item">
         <label class="layui-form-label">角色选择</label>
         <div class="layui-input-block">
@@ -218,6 +232,14 @@
           }
         }
       }
+      ,phone:function (value) {
+            if(value.trim()==""){
+                return "电话号码不能为空";
+            }
+            if(!/^1\d{10}$/.test(value)){
+                return "电话号码格式不正确";
+            }
+        }
     });
 
    $('#close').click(function(){

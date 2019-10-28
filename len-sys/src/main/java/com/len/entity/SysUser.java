@@ -52,4 +52,7 @@ public class SysUser {
      */
     @Column(name = "del_flag")
     private Byte delFlag;
+
+    @Column(name = "phone")
+    private String phone;
 }

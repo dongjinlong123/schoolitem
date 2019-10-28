@@ -49,7 +49,7 @@ public interface SysUserService extends BaseService<SysUser,String> {
 
   List<SysRoleUser> selectByCondition(SysRoleUser sysRoleUser);
 
-  public List<Checkbox> getUserRoleByJson(String id);
+  List<Checkbox> getUserRoleByJson(String id);
 
   /**
    * 更新密码

@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSONArray;
 import com.len.base.BaseController;
 import com.len.core.annotation.Log;
 import com.len.core.annotation.Log.LOG_TYPE;
+import com.len.core.shiro.Principal;
 import com.len.entity.SysMenu;
 import com.len.exception.MyException;
 import com.len.service.MenuService;
@@ -11,6 +12,7 @@ import com.len.util.BeanUtil;
 import com.len.util.JsonUtil;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,11 +23,14 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.Arrays;
+
 /**
  * 菜单
  */
 @RequestMapping("/menu")
 @Controller
+@Slf4j
 @Api(value = "菜单管理",description="菜单业务处理")
 public class MenuController extends BaseController {
 
@@ -44,6 +49,7 @@ public class MenuController extends BaseController {
     public String showMenu(Model model) {
         JSONArray ja = menuService.getMenuJsonList();
         model.addAttribute("menus", ja.toJSONString());
+        log.info("当前用户对于的角色" + Arrays.asList( Principal.getCurrentUse().getCurrentRoleList()));
         return "/system/menu/menuList";
     }
 

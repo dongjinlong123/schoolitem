@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="${re.contextPath}/plugin/layui/css/layui.css">
   <script type="text/javascript" src="${re.contextPath}/plugin/jquery/jquery-3.2.1.min.js"></script>
   <script type="text/javascript" src="${re.contextPath}/plugin/layui/layui.all.js" charset="utf-8"></script>
+    <script type="text/javascript" src="${re.contextPath}/plugin/common.js" charset="utf-8"></script>
   <script type="text/javascript" src="${re.contextPath}/plugin/tools/tool.js"></script>
   <script type="text/javascript" src="${re.contextPath}/plugin/tools/update-setting.js"></script>
   <script type="text/javascript">
@@ -17,6 +18,9 @@
       var flag='${detail}';
       if(flag){
         $("form").disable();
+      }else{
+          //所有的带有readyonly的添加背景颜色
+          readyOnlyInputById("uname");
       }
     });
   </script>
@@ -57,7 +61,7 @@
       <div class="layui-input-inline">
         <input value="${user.id}" type="hidden" name="id">
         <input type="text"  id="uname" value="${user.username}" readonly lay-verify="username"
-               autocomplete="off" class="layui-input">
+               autocomplete="off" class="layui-input" >
       </div>
       <div id="ms" class="layui-form-mid layui-word-aux">
         <span class="x-red">*</span><span id="ums">将会成为您唯一的登入名</span>
@@ -82,15 +86,26 @@
         </div>
       </div>
     </div>
-    <div>
-      <label for="email" class="layui-form-label">
-        <span class="x-red"></span>邮箱
-      </label>
-      <div class="layui-input-block">
-        <input type="email" id="email" value="${user.email}" style="width: 93%" name="email"  lay-verify="email"
-               autocomplete="off" class="layui-input">
-        <input id="photo" value="${user.photo}" name="photo" type="hidden">
-      </div>
+    <div class="layui-form-item">
+        <div class="layui-inline">
+          <label for="email" class="layui-form-label">
+            <span class="x-red"></span>邮箱
+          </label>
+          <div class="layui-input-inline">
+            <input type="email" id="email" value="${user.email}" name="email"  lay-verify="email"
+                   autocomplete="off" class="layui-input">
+            <input id="photo" value="${user.photo}" name="photo" type="hidden">
+          </div>
+        </div>
+        <div class="layui-inline">
+            <label for="L_repass" class="layui-form-label">
+                <span class="x-red">*</span>手机号码
+            </label>
+            <div class="layui-input-inline">
+                <input type="phone" id="phone" name="phone" value="${user.phone}" lay-verify="phone" autocomplete="off"
+                       class="layui-input">
+            </div>
+        </div>
     </div>
       <div class="layui-form-item">
         <label class="layui-form-label">角色选择</label>
@@ -208,6 +223,14 @@
           }
         }
       }
+      ,phone:function (value) {
+            if(value.trim()==""){
+                return "电话号码不能为空";
+            }
+            if(!/^1\d{10}$/.test(value)){
+                return "电话号码格式不正确";
+            }
+        }
     });
 
    $('#close').click(function(){

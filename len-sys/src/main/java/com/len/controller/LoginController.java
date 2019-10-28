@@ -101,7 +101,9 @@ public class LoginController {
     }
 
     @GetMapping("/main")
-    public String main() {
+    public String main(Model model) {
+        //获取当前用户的代办提醒数量
+        model.addAttribute("remindNum",6);
         return "main/main";
     }
 

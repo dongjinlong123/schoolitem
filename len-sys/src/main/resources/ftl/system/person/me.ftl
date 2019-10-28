@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="/plugin/layui/css/layui.css">
     <script type="text/javascript" src="/plugin/jquery/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="/plugin/layui/layui.all.js" charset="utf-8"></script>
+    <script type="text/javascript" src="${re.contextPath}/plugin/common.js" charset="utf-8"></script>
     <script type="text/javascript" src="/plugin/tools/tool.js"></script>
     <script type="text/javascript" src="/plugin/tools/update-setting.js"></script>
 </head>
@@ -39,8 +40,8 @@
             <span class="x-red">*</span>用户名
         </label>
         <div class="layui-input-inline">
-            <input value="${user.id}" type="hidden" name="id">
-            <input type="text"  id="uname" value="${user.username}" readonly lay-verify="username"
+            <input value="${user.id}" type="hidden" name="id" id="userId">
+            <input type="text"  id="uname" value="${user.username}" readonly
                    autocomplete="off" class="layui-input">
         </div>
         <div id="ms" class="layui-form-mid layui-word-aux">
@@ -66,56 +67,45 @@
             </div>
         </div>
     </div>
-    <div>
-        <label for="email" class="layui-form-label">
-            <span class="x-red"></span>邮箱
-        </label>
-        <div class="layui-input-block">
-            <input type="email" id="email" value="${user.email}" style="width: 93%" name="email"  lay-verify="email"
-                   autocomplete="off" class="layui-input">
-            <input id="photo" value="${user.photo}" name="photo" type="hidden">
+
+    <div class="layui-form-item">
+        <div class="layui-inline">
+            <label for="email" class="layui-form-label">
+                <span class="x-red"></span>邮箱
+            </label>
+            <div class="layui-input-inline">
+                <input type="email" id="email" value="${user.email}"  name="email"  lay-verify="email"
+                       autocomplete="off" class="layui-input">
+                <input id="photo" value="${user.photo}" name="photo" type="hidden">
+            </div>
+        </div>
+        <div class="layui-inline">
+            <label for="L_repass" class="layui-form-label">
+                <span class="x-red">*</span>手机号码
+            </label>
+            <div class="layui-input-inline">
+                <input type="phone" id="phone" name="phone" value="${user.phone}" lay-verify="phone" autocomplete="off"
+                       class="layui-input">
+            </div>
         </div>
     </div>
+
     <a  class="layui-btn layui-btn-normal" lay-filter="*"  lay-submit>
         更新
     </a>
+
+    <a  class="layui-btn layui-btn-normal" onclick="changePwd()" >修改密码 </a>
 </form>
 </body>
 <script>
-    var flag;
     $(function () {
-        let name='${user.username}';
-        if($('#uname').val()===name)
-            flag=true;
-        let uNameFun=$('#uname');
-        uNameFun.on('blur',function(){
-           let uName=uNameFun.val();
-            if(uName.match(/[\u4e00-\u9fa5]/)) return;
-            if(!/(.+){3,12}$/.test(uName)) return;
+        //所有的带有readyonly的添加背景颜色
+        readyOnlyInputById("uname");
 
-            if(uName!=''&&uName!=name) {
-                $.ajax({
-                    url: 'checkUser?uname=' + uname, async: false, type: 'get', success: function (data) {
-                        flag = data.flag;
-                        $('#ms').find('span').remove();
-                        if (!data.flag) {
-                            msg = data.msg;
-                            $('#ms').append("<span style='color: red;'>"+data.msg+"</span>");
-                            // layer.msg(msg,{icon: 5,anim: 6});
-                        }else{
-                            flag=true;
-                            $('#ms').append("<span style='color: green;'>用户名可用</span>");
-                        }
-                    },beforeSend:function(){
-                        $('#ms').find('span').remove();
-                        $('#ms').append("<span>验证ing</span>");
-                    }
-                });
-            }else{
-                flag=true;
-            }
-        });
     });
+    function changePwd(){
+        rePwd('修改密码','user/goRePass?id=' + $("#userId").val(),500,350);
+    }
 
     layui.use(['form','layer','upload'], function(){
         $ = layui.jquery;
@@ -142,28 +132,19 @@
 
         //自定义验证规则
         form.verify({
-            username: function(value){
-                if(value.trim()==""){
-                    return "用户名不能为空";
-                }
-                if(value.match(/[\u4e00-\u9fa5]/)){
-                    return "用户名不能为中文";
-                }
-                if(!/(.+){3,12}$/.test(value)){
-                    return "用户名必须3到12位";
-                }
-                if(typeof(flag)=='undefined'){
-                    return "用户名验证ing";
-                }
-                if(!flag){
-                    return msg;
-                }
-            }
-            ,email:function(value){
+            email:function(value){
                 if(value!=""){
                     if(!/^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+/.test(value)){
                         return "邮箱格式不正确";
                     }
+                }
+            }
+            ,phone:function (value) {
+                if(value.trim()==""){
+                    return "电话号码不能为空";
+                }
+                if(!/^1\d{10}$/.test(value)){
+                    return "电话号码格式不正确";
                 }
             }
         });
@@ -188,5 +169,31 @@
             return false;
         });
     });
+
+    function rePwd(title,url,w,h){
+        if (title == null || title == '') {
+            title = false;
+        };
+        if (url == null || url == '') {
+            url = "404.html";
+        };
+        if (w == null || w == '') {
+            w = ($(window).width() * 0.9);
+        };
+        if (h == null || h == '') {
+            h = ($(window).height() - 50);
+        };
+        layer.open({
+            id: 'user-rePwd',
+            type: 2,
+            area: [w + 'px', h + 'px'],
+            fix: false,
+            maxmin: true,
+            shadeClose: true,
+            shade: 0.4,
+            title: title,
+            content: url,
+        });
+    }
 </script>
 </html>

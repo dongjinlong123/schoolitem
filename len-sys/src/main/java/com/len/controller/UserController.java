@@ -5,6 +5,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import com.len.base.BaseController;
+import com.len.base.CurrentUser;
 import com.len.core.annotation.Log;
 import com.len.core.annotation.Log.LOG_TYPE;
 import com.len.core.quartz.JobTask;
@@ -16,6 +17,7 @@ import com.len.service.SysUserService;
 import com.len.util.*;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,12 +29,13 @@ import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
-
+import  com.len.core.shiro.Principal;
 /**
  * 用户管理
  */
 //@Api(value="user")
 @Controller
+@Slf4j
 @RequestMapping(value = "/user")
 @Api(value = "用户管理",description="用户管理业务")
 public class UserController extends BaseController {
@@ -92,9 +95,9 @@ public class UserController extends BaseController {
         if (StringUtils.isBlank(user.getPassword())) {
             return JsonUtil.error("密码不能为空");
         }
-        if (role == null) {
+      /*  if (role == null) {
             return JsonUtil.error("请选择角色");
-        }
+        }*/
         int result = userService.checkUser(user.getUsername());
         if (result > 0) {
             return JsonUtil.error("用户名已存在");
@@ -104,9 +107,11 @@ public class UserController extends BaseController {
             userService.insertSelective(user);
             SysRoleUser sysRoleUser = new SysRoleUser();
             sysRoleUser.setUserId(user.getId());
-            for (String r : role) {
-                sysRoleUser.setRoleId(r);
-                roleUserService.insertSelective(sysRoleUser);
+            if(role != null){
+                for (String r : role) {
+                    sysRoleUser.setRoleId(r);
+                    roleUserService.insertSelective(sysRoleUser);
+                }
             }
             j.setMsg("保存成功");
         } catch (MyException e) {
@@ -197,9 +202,9 @@ public class UserController extends BaseController {
     @Log(desc = "修改密码", type = LOG_TYPE.UPDATE)
     @PostMapping(value = "rePass")
     @ResponseBody
-    @RequiresPermissions("user:repass")
+    //@RequiresPermissions("user:repass")
     public JsonUtil rePass(String id, String pass, String newPwd) {
-        boolean flag = StringUtils.isEmpty(id) || StringUtils.isEmpty(pass) || StringUtils.isEmpty(newPwd);
+        boolean flag = StringUtils.isEmpty(id) || StringUtils.isEmpty(newPwd);
         JsonUtil j = new JsonUtil();
         j.setFlag(false);
         if (flag) {
@@ -208,15 +213,22 @@ public class UserController extends BaseController {
         }
         SysUser user = userService.selectByPrimaryKey(id);
         newPwd = Md5Util.getMD5(newPwd, user.getUsername());
-        pass = Md5Util.getMD5(pass, user.getUsername());
-        if (!pass.equals(user.getPassword())) {
-            j.setMsg("密码不正确");
-            return j;
-        }
-        if (newPwd.equals(user.getPassword())) {
-            j.setMsg("新密码不能与旧密码相同");
 
-            return j;
+        //如果是admin用户不需要输入旧的密码
+        if(!Principal.isAdmin()){
+            if (StringUtils.isEmpty(pass)) {
+                j.setMsg("旧密码不能为空");
+                return j;
+            }
+            pass = Md5Util.getMD5(pass, user.getUsername());
+            if (!pass.equals(user.getPassword())) {
+                j.setMsg("密码不正确");
+                return j;
+            }
+            if (newPwd.equals(user.getPassword())) {
+                j.setMsg("新密码不能与旧密码相同");
+                return j;
+            }
         }
         user.setPassword(newPwd);
         try {

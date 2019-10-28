@@ -19,7 +19,7 @@
 <body class="login-bg">
 
 <div class="login">
-    <div class="message">个人项目管理系统后台</div>
+    <div class="message">海职院后台管理系统</div>
     <div id="darkbannerwrap"></div>
 
     <form method="post" action="${re.contextPath}/login" class="layui-form" >
