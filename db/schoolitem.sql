@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50717
 File Encoding         : 65001
 
-Date: 2019-10-26 00:23:26
+Date: 2019-10-28 23:26:22
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -3331,7 +3331,7 @@ CREATE TABLE `sys_log` (
   `param` text,
   `create_time` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=162 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=193 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of sys_log
@@ -3488,6 +3488,37 @@ INSERT INTO `sys_log` VALUES ('158', 'admin', '0:0:0:0:0:0:0:1', 'DEL', '删除�
 INSERT INTO `sys_log` VALUES ('159', 'admin', '0:0:0:0:0:0:0:1', 'DEL', '删除角色', '[参数1:\"023366f3457511e8bcf1309c2315f9aa\"]', '2019-10-25 22:15:48');
 INSERT INTO `sys_log` VALUES ('160', 'admin', '0:0:0:0:0:0:0:1', 'DEL', '删除角色', '[参数1:\"dcb0f642fe9611e7b472201a068c6482\"]', '2019-10-25 22:15:50');
 INSERT INTO `sys_log` VALUES ('161', 'admin', '0:0:0:0:0:0:0:1', 'DEL', '删除角色', '[参数1:\"0ea934e5e55411e7b983201a068c6482\"]', '2019-10-25 22:15:52');
+INSERT INTO `sys_log` VALUES ('162', 'admin', '0:0:0:0:0:0:0:1', 'DEL', '删除菜单', '[参数1:\"1fc42b542021460bb95cd86fb1930b00\"]', '2019-10-27 11:17:39');
+INSERT INTO `sys_log` VALUES ('163', 'admin', '0:0:0:0:0:0:0:1', 'DEL', '删除菜单', '[参数1:\"b004be98ce4348f5b097f61f09067e63\"]', '2019-10-27 11:18:08');
+INSERT INTO `sys_log` VALUES ('164', 'admin', '0:0:0:0:0:0:0:1', 'DEL', '删除菜单', '[参数1:\"b004be98ce4348f5b097f61f09067e63\"]', '2019-10-27 11:18:13');
+INSERT INTO `sys_log` VALUES ('165', 'admin', '0:0:0:0:0:0:0:1', 'DEL', '删除菜单', '[参数1:\"b004be98ce4348f5b097f61f09067e63\"]', '2019-10-27 11:18:18');
+INSERT INTO `sys_log` VALUES ('166', 'admin', '0:0:0:0:0:0:0:1', 'DEL', '删除菜单', '[参数1:\"4a3c40c973204a9f8549947ae7b4521b\"]', '2019-10-27 11:22:59');
+INSERT INTO `sys_log` VALUES ('167', 'admin', '0:0:0:0:0:0:0:1', 'ATHOR', '更新角色', '[参数1:{\"id\":\"2619a672e53811e7b983201a068c6482\",\"remark\":\"管理员\",\"roleName\":\"admin\"}][参数2:[\"cfda8029dfb311e7b555201a068c6482\",\"3873ccc2dfda11e7b555201a068c6482\",\"18bf8d5df09511e78a57201a068c6482\",\"8a6c8bfa7f804eac810c5790cad9a62a\",\"cfe54921dfb311e7b555201a068c6482\",\"433089a6eb0111e782d5201a068c6482\",\"cfe54921dfb311e7b555201a068c6483\",\"e3b11497eb9e11e7928d201a068c6482\",\"f23f6a6bf09511e78a57201a068c6482\",\"cff61424dfb311e7b555201a068c6482\",\"0e6c8d4cf09511e78a57201a068c6482\",\"2b56410cf09411e78a57201a068c6482\",\"88b8e5d1f38911e7aca0201a068c6482\",\"ff015ea5f09411e78a57201a068c6482\",\"a1ca6642ec5e11e7a472201a068c6482\",\"6dc13c6eec5f11e7a472201a068c6482\",\"7967e098ee0611e7a60d201a068c6482\",\"b441914cee0811e7a60d201a068c6482\",\"6931fd22f09611e78a57201a068c6482\",\"e9a13e55f35911e7aca0201a068c6482\",\"5ae3d4e9f38e11e7aca0201a068c6482\",\"6315968bf37111e7aca0201a068c6482\",\"69f3f59cf38e11e7aca0201a068c6482\",\"788d8e34f38e11e7aca0201a068c6482\",\"873f30b0f38e11e7aca0201a068c6482\",\"ecda560cf36f11e7aca0201a068c6482\"]]', '2019-10-27 11:23:11');
+INSERT INTO `sys_log` VALUES ('168', 'admin', '0:0:0:0:0:0:0:1', 'DEL', '删除菜单', '[参数1:\"4a3c40c973204a9f8549947ae7b4521b\"]', '2019-10-27 11:23:18');
+INSERT INTO `sys_log` VALUES ('169', 'admin', '0:0:0:0:0:0:0:1', 'DEL', '删除菜单', '[参数1:\"8b472608bd8d4d209808c03cd6e6188b\"]', '2019-10-27 11:23:23');
+INSERT INTO `sys_log` VALUES ('170', 'admin', '0:0:0:0:0:0:0:1', 'DEL', '删除菜单', '[参数1:\"e2e43bb8dad34a1a951e92d974729308\"]', '2019-10-27 11:23:26');
+INSERT INTO `sys_log` VALUES ('171', 'admin', '0:0:0:0:0:0:0:1', 'DEL', '删除菜单', '[参数1:\"e2e43bb8dad34a1a951e92d974729308\"]', '2019-10-27 11:23:32');
+INSERT INTO `sys_log` VALUES ('172', 'admin', '0:0:0:0:0:0:0:1', 'ATHOR', '更新角色', '[参数1:{\"id\":\"2619a672e53811e7b983201a068c6482\",\"remark\":\"管理员\",\"roleName\":\"admin\"}][参数2:[\"cfda8029dfb311e7b555201a068c6482\",\"3873ccc2dfda11e7b555201a068c6482\",\"18bf8d5df09511e78a57201a068c6482\",\"8a6c8bfa7f804eac810c5790cad9a62a\",\"cfe54921dfb311e7b555201a068c6482\",\"433089a6eb0111e782d5201a068c6482\",\"cfe54921dfb311e7b555201a068c6483\",\"e3b11497eb9e11e7928d201a068c6482\",\"f23f6a6bf09511e78a57201a068c6482\",\"cff61424dfb311e7b555201a068c6482\",\"0e6c8d4cf09511e78a57201a068c6482\",\"2b56410cf09411e78a57201a068c6482\",\"88b8e5d1f38911e7aca0201a068c6482\",\"ff015ea5f09411e78a57201a068c6482\",\"a1ca6642ec5e11e7a472201a068c6482\",\"6dc13c6eec5f11e7a472201a068c6482\",\"7967e098ee0611e7a60d201a068c6482\",\"b441914cee0811e7a60d201a068c6482\",\"6931fd22f09611e78a57201a068c6482\",\"e9a13e55f35911e7aca0201a068c6482\",\"5ae3d4e9f38e11e7aca0201a068c6482\",\"6315968bf37111e7aca0201a068c6482\",\"69f3f59cf38e11e7aca0201a068c6482\",\"788d8e34f38e11e7aca0201a068c6482\",\"873f30b0f38e11e7aca0201a068c6482\",\"ecda560cf36f11e7aca0201a068c6482\"]]', '2019-10-27 11:23:47');
+INSERT INTO `sys_log` VALUES ('173', 'admin', '0:0:0:0:0:0:0:1', 'DEL', '删除菜单', '[参数1:\"e2e43bb8dad34a1a951e92d974729308\"]', '2019-10-27 11:23:53');
+INSERT INTO `sys_log` VALUES ('174', 'admin', '0:0:0:0:0:0:0:1', 'DEL', '删除菜单', '[参数1:\"851a69a2be3245779ce53c1d26536487\"]', '2019-10-27 11:25:40');
+INSERT INTO `sys_log` VALUES ('175', 'admin', '0:0:0:0:0:0:0:1', 'DEL', '删除菜单', '[参数1:\"851a69a2be3245779ce53c1d26536487\"]', '2019-10-27 11:25:57');
+INSERT INTO `sys_log` VALUES ('176', 'admin', '0:0:0:0:0:0:0:1', 'ADD', '添加用户', '[参数1:{\"age\":23,\"email\":\"\",\"password\":\"dong123\",\"phone\":\"15323748679\",\"photo\":\"\",\"realName\":\"董锦龙\",\"username\":\"djl\"}][参数2:null]', '2019-10-27 11:59:17');
+INSERT INTO `sys_log` VALUES ('177', 'admin', '0:0:0:0:0:0:0:1', 'ADD', '添加用户', '[参数1:{\"age\":23,\"createBy\":\"acfc0e9232f54732a5d9ffe9071bf572\",\"createDate\":1572148763167,\"email\":\"\",\"id\":\"1029d51781b645ddab1584b225d1b8cf\",\"password\":\"4a468e70bcfc9150b1a00c15eea5fc43\",\"phone\":\"15323748679\",\"photo\":\"\",\"realName\":\"董锦龙\",\"username\":\"djl\"}][参数2:[\"2619a672e53811e7b983201a068c6482\"]]', '2019-10-27 11:59:23');
+INSERT INTO `sys_log` VALUES ('178', 'admin', '0:0:0:0:0:0:0:1', 'UPDATE', '更新用户', '[参数1:{\"age\":24,\"email\":\"\",\"id\":\"acfc0e9232f54732a5d9ffe9071bf572\",\"photo\":\"ea256361-de4a-4a5e-8cfb-3d56e955cfdb.png\",\"realName\":\"管理员\"}][参数2:[\"2619a672e53811e7b983201a068c6482\"]]', '2019-10-27 11:59:38');
+INSERT INTO `sys_log` VALUES ('179', 'admin', '0:0:0:0:0:0:0:1', 'UPDATE', '更新用户', '[参数1:{\"age\":24,\"email\":\"904118787@qq.com\",\"id\":\"acfc0e9232f54732a5d9ffe9071bf572\",\"photo\":\"ea256361-de4a-4a5e-8cfb-3d56e955cfdb.png\",\"realName\":\"管理员\"}][参数2:[\"2619a672e53811e7b983201a068c6482\"]]', '2019-10-27 11:59:48');
+INSERT INTO `sys_log` VALUES ('180', 'admin', '0:0:0:0:0:0:0:1', 'ATHOR', '添加角色', '[参数1:{\"createBy\":\"acfc0e9232f54732a5d9ffe9071bf572\",\"createDate\":1572148834232,\"id\":\"c66aabd6c8f246a3b557ec66d958e654\",\"remark\":\"普通用户\",\"roleName\":\"普通用户\"}][参数2:null]', '2019-10-27 12:00:34');
+INSERT INTO `sys_log` VALUES ('181', 'admin', '0:0:0:0:0:0:0:1', 'UPDATE', '更新用户', '[参数1:{\"age\":23,\"email\":\"\",\"id\":\"1029d51781b645ddab1584b225d1b8cf\",\"photo\":\"\",\"realName\":\"董锦龙\"}][参数2:null]', '2019-10-27 12:01:07');
+INSERT INTO `sys_log` VALUES ('182', 'admin', '0:0:0:0:0:0:0:1', 'ADD', '添加用户', '[参数1:{\"age\":12,\"createBy\":\"acfc0e9232f54732a5d9ffe9071bf572\",\"createDate\":1572149177178,\"email\":\"\",\"id\":\"2261f6f3b6c749e5b075e8113508d58c\",\"password\":\"f37ffa1c1dcb4bed23ca15f26d57c9e3\",\"phone\":\"15323878787\",\"photo\":\"\",\"realName\":\"ZZ\",\"username\":\"DDDD\"}][参数2:null]', '2019-10-27 12:06:17');
+INSERT INTO `sys_log` VALUES ('183', 'admin', '0:0:0:0:0:0:0:1', 'UPDATE', '更新用户', '[参数1:{\"age\":23,\"email\":\"\",\"id\":\"1029d51781b645ddab1584b225d1b8cf\",\"phone\":\"15323748679\",\"photo\":\"6f983174-33be-4cc9-a3b9-0b636db4b3ff.png\",\"realName\":\"董锦龙\"}][参数2:null]', '2019-10-27 12:26:52');
+INSERT INTO `sys_log` VALUES ('184', 'admin', '0:0:0:0:0:0:0:1', 'UPDATE', '更新用户', '[参数1:{\"age\":24,\"email\":\"904118787@qq.com\",\"id\":\"acfc0e9232f54732a5d9ffe9071bf572\",\"phone\":\"15323748679\",\"photo\":\"ea256361-de4a-4a5e-8cfb-3d56e955cfdb.png\",\"realName\":\"管理员\"}]', '2019-10-27 12:45:35');
+INSERT INTO `sys_log` VALUES ('185', 'admin', '0:0:0:0:0:0:0:1', 'UPDATE', '修改密码', '[参数1:null][参数2:null][参数3:\"dong999\"]', '2019-10-28 22:25:38');
+INSERT INTO `sys_log` VALUES ('186', 'admin', '0:0:0:0:0:0:0:1', 'UPDATE', '修改密码', '[参数1:null][参数2:null][参数3:\"dong123456\"]', '2019-10-28 22:26:11');
+INSERT INTO `sys_log` VALUES ('187', 'admin', '0:0:0:0:0:0:0:1', 'UPDATE', '修改密码', '[参数1:null][参数2:\"\"][参数3:\"123456\"]', '2019-10-28 22:49:53');
+INSERT INTO `sys_log` VALUES ('188', 'admin', '0:0:0:0:0:0:0:1', 'UPDATE', '修改密码', '[参数1:null][参数2:\"\"][参数3:\"123456\"]', '2019-10-28 22:50:20');
+INSERT INTO `sys_log` VALUES ('189', 'admin', '0:0:0:0:0:0:0:1', 'UPDATE', '修改密码', '[参数1:null][参数2:\"\"][参数3:\"123456\"]', '2019-10-28 22:52:52');
+INSERT INTO `sys_log` VALUES ('190', 'admin', '0:0:0:0:0:0:0:1', 'UPDATE', '修改密码', '[参数1:null][参数2:\"\"][参数3:\"123456\"]', '2019-10-28 22:54:29');
+INSERT INTO `sys_log` VALUES ('191', 'admin', '0:0:0:0:0:0:0:1', 'UPDATE', '修改密码', '[参数1:\"1029d51781b645ddab1584b225d1b8cf\"][参数2:\"\"][参数3:\"123456\"]', '2019-10-28 22:54:41');
+INSERT INTO `sys_log` VALUES ('192', 'admin', '0:0:0:0:0:0:0:1', 'UPDATE', '修改密码', '[参数1:\"1029d51781b645ddab1584b225d1b8cf\"][参数2:\"\"][参数3:\"123456\"]', '2019-10-28 22:54:45');
 
 -- ----------------------------
 -- Table structure for `sys_menu`
@@ -3512,44 +3543,31 @@ CREATE TABLE `sys_menu` (
 -- ----------------------------
 -- Records of sys_menu
 -- ----------------------------
-INSERT INTO `sys_menu` VALUES ('0ddd69b2b761456e9f7028c2cf3a296d', '查看', '8b472608bd8d4d209808c03cd6e6188b', null, '1', null, 'acfc0e9232f54732a5d9ffe9071bf572', '2019-06-23 15:57:06', null, null, 'hjPerson:select', '1');
 INSERT INTO `sys_menu` VALUES ('0e6c8d4cf09511e78a57201a068c6482', '删除', 'cff61424dfb311e7b555201a068c6482', null, '3', '', 'acfc0e9232f54732a5d9ffe9071bf572', '2018-01-03 22:47:44', null, null, 'role:del', '1');
 INSERT INTO `sys_menu` VALUES ('18bf8d5df09511e78a57201a068c6482', '新增', '3873ccc2dfda11e7b555201a068c6482', null, '1', '', 'acfc0e9232f54732a5d9ffe9071bf572', '2018-01-03 22:48:01', null, null, 'nemu:add', '1');
-INSERT INTO `sys_menu` VALUES ('1fc42b542021460bb95cd86fb1930b00', '查看', 'e2e43bb8dad34a1a951e92d974729308', null, '3', null, 'acfc0e9232f54732a5d9ffe9071bf572', '2019-07-03 22:57:41', null, null, 'article:select', '1');
 INSERT INTO `sys_menu` VALUES ('2b56410cf09411e78a57201a068c6482', '新增', 'cff61424dfb311e7b555201a068c6482', null, '1', '', 'acfc0e9232f54732a5d9ffe9071bf572', '2018-01-03 22:41:23', null, null, 'role:add', '1');
-INSERT INTO `sys_menu` VALUES ('2b5af8ad3122454bb5e52bbf8da9b285', '刪除', '8b472608bd8d4d209808c03cd6e6188b', null, '4', null, 'acfc0e9232f54732a5d9ffe9071bf572', '2019-06-27 21:29:40', null, null, 'hjPerson:del', '1');
 INSERT INTO `sys_menu` VALUES ('3873ccc2dfda11e7b555201a068c6482', '菜单管理', 'cfda8029dfb311e7b555201a068c6482', 'menu/showMenu', '1', '', null, '2017-12-14 14:02:50', 'acfc0e9232f54732a5d9ffe9071bf572', '2018-04-23 19:43:54', 'menu:show', '0');
 INSERT INTO `sys_menu` VALUES ('433089a6eb0111e782d5201a068c6482', '编辑', 'cfe54921dfb311e7b555201a068c6482', '', null, '1', 'acfc0e9232f54732a5d9ffe9071bf572', '2017-12-27 20:27:11', null, null, 'user:update', '1');
-INSERT INTO `sys_menu` VALUES ('4a3c40c973204a9f8549947ae7b4521b', '用户管理', '851a69a2be3245779ce53c1d26536487', '/wxUser/showWxUser', '3', '', 'acfc0e9232f54732a5d9ffe9071bf572', '2019-07-09 22:38:10', 'acfc0e9232f54732a5d9ffe9071bf572', '2019-07-09 22:39:04', 'showWxUser', '0');
 INSERT INTO `sys_menu` VALUES ('5ae3d4e9f38e11e7aca0201a068c6482', '新增', 'e9a13e55f35911e7aca0201a068c6482', null, '1', '', 'acfc0e9232f54732a5d9ffe9071bf572', '2018-01-07 17:37:30', null, null, 'job:add', '1');
 INSERT INTO `sys_menu` VALUES ('6315968bf37111e7aca0201a068c6482', '停止', 'e9a13e55f35911e7aca0201a068c6482', null, '4', '', 'acfc0e9232f54732a5d9ffe9071bf572', '2018-01-07 14:10:09', null, null, 'job:end', '1');
-INSERT INTO `sys_menu` VALUES ('64e46a9e67a54ea6a371c3aa30fe43a1', '删除', 'e2e43bb8dad34a1a951e92d974729308', null, '4', null, 'acfc0e9232f54732a5d9ffe9071bf572', '2019-07-03 22:58:12', null, null, 'article:del', '1');
 INSERT INTO `sys_menu` VALUES ('6931fd22f09611e78a57201a068c6482', '删除', 'b441914cee0811e7a60d201a068c6482', null, '1', '', 'acfc0e9232f54732a5d9ffe9071bf572', '2018-01-03 22:57:26', null, null, 'control:del', '1');
 INSERT INTO `sys_menu` VALUES ('69f3f59cf38e11e7aca0201a068c6482', '编辑', 'e9a13e55f35911e7aca0201a068c6482', null, '2', '', 'acfc0e9232f54732a5d9ffe9071bf572', '2018-01-07 17:37:56', null, null, 'job:update', '1');
 INSERT INTO `sys_menu` VALUES ('6dc13c6eec5f11e7a472201a068c6482', '系统日志', 'a1ca6642ec5e11e7a472201a068c6482', 'log/showLog', '1', '&#xe60a;', 'acfc0e9232f54732a5d9ffe9071bf572', '2017-12-29 14:43:46', null, '2017-12-29 14:43:46', 'log:show', '0');
-INSERT INTO `sys_menu` VALUES ('6dd16375f859457789e44c36425000bb', '添加', 'e2e43bb8dad34a1a951e92d974729308', null, '1', null, 'acfc0e9232f54732a5d9ffe9071bf572', '2019-07-03 22:56:50', null, null, 'article:add', '1');
 INSERT INTO `sys_menu` VALUES ('788d8e34f38e11e7aca0201a068c6482', '删除', 'e9a13e55f35911e7aca0201a068c6482', null, '5', '', 'acfc0e9232f54732a5d9ffe9071bf572', '2018-01-07 17:38:20', null, null, 'job:del', '1');
 INSERT INTO `sys_menu` VALUES ('7967e098ee0611e7a60d201a068c6482', '接口api', 'a1ca6642ec5e11e7a472201a068c6482', 'swagger-ui.html', '2', '&#xe64e;', 'acfc0e9232f54732a5d9ffe9071bf572', '2017-12-31 16:42:04', null, null, null, '0');
-INSERT INTO `sys_menu` VALUES ('851a69a2be3245779ce53c1d26536487', '博客系统', null, null, '3', '', 'acfc0e9232f54732a5d9ffe9071bf572', '2019-06-23 11:50:26', 'acfc0e9232f54732a5d9ffe9071bf572', '2019-07-09 22:31:38', null, '0');
 INSERT INTO `sys_menu` VALUES ('873f30b0f38e11e7aca0201a068c6482', '查看', 'e9a13e55f35911e7aca0201a068c6482', null, '6', '', 'acfc0e9232f54732a5d9ffe9071bf572', '2018-01-07 17:38:45', null, null, 'job:select', '1');
 INSERT INTO `sys_menu` VALUES ('88b8e5d1f38911e7aca0201a068c6482', '查看', 'cff61424dfb311e7b555201a068c6482', null, '4', '', 'acfc0e9232f54732a5d9ffe9071bf572', '2018-01-07 17:03:00', null, null, 'role:select', '1');
 INSERT INTO `sys_menu` VALUES ('8a6c8bfa7f804eac810c5790cad9a62a', '删除', '3873ccc2dfda11e7b555201a068c6482', null, '2', null, 'acfc0e9232f54732a5d9ffe9071bf572', '2018-06-20 21:55:55', null, null, 'menu:del', '1');
-INSERT INTO `sys_menu` VALUES ('8b472608bd8d4d209808c03cd6e6188b', '花椒通讯录', '851a69a2be3245779ce53c1d26536487', '/hjPerson/showHjPerson', '1', '', 'acfc0e9232f54732a5d9ffe9071bf572', '2019-06-23 11:51:53', 'acfc0e9232f54732a5d9ffe9071bf572', '2019-07-09 22:35:19', 'hjPerson:show', '0');
 INSERT INTO `sys_menu` VALUES ('a1ca6642ec5e11e7a472201a068c6482', '系统监控', null, null, '2', '&#xe62c;', 'acfc0e9232f54732a5d9ffe9071bf572', '2018-01-03 10:56:14', null, '2018-01-03 10:56:14', null, '0');
-INSERT INTO `sys_menu` VALUES ('b004be98ce4348f5b097f61f09067e63', '查看', '4a3c40c973204a9f8549947ae7b4521b', null, '1', null, 'acfc0e9232f54732a5d9ffe9071bf572', '2019-07-09 23:06:02', null, null, 'wxUser:show', '1');
 INSERT INTO `sys_menu` VALUES ('b441914cee0811e7a60d201a068c6482', '系统监控', 'a1ca6642ec5e11e7a472201a068c6482', 'druid/index.html', '3', '&#xe628;', 'acfc0e9232f54732a5d9ffe9071bf572', '2017-12-31 16:58:01', null, null, null, '0');
-INSERT INTO `sys_menu` VALUES ('c96297c0a2294a9c99f856cc44eef85f', '新增', '8b472608bd8d4d209808c03cd6e6188b', null, '3', null, 'acfc0e9232f54732a5d9ffe9071bf572', '2019-06-23 15:58:07', null, null, 'hjPerson:add', '1');
-INSERT INTO `sys_menu` VALUES ('cf378a87acb6470991f5029077160671', '修改', 'e2e43bb8dad34a1a951e92d974729308', null, '2', null, 'acfc0e9232f54732a5d9ffe9071bf572', '2019-07-03 22:57:24', null, null, 'article:update', '1');
 INSERT INTO `sys_menu` VALUES ('cfda8029dfb311e7b555201a068c6482', '系统管理', null, null, '1', '', null, '2018-01-03 10:56:13', 'acfc0e9232f54732a5d9ffe9071bf572', '2019-06-27 21:01:38', null, '0');
 INSERT INTO `sys_menu` VALUES ('cfe54921dfb311e7b555201a068c6482', '用户管理', 'cfda8029dfb311e7b555201a068c6482', '/user/showUser', '2', '&#xe6af;', null, '2017-12-29 14:40:34', null, '2017-12-29 14:40:34', 'user:show', '0');
 INSERT INTO `sys_menu` VALUES ('cfe54921dfb311e7b555201a068c6483', '增加', 'cfe54921dfb311e7b555201a068c6482', null, '1', null, null, null, null, null, 'user:select', '1');
 INSERT INTO `sys_menu` VALUES ('cff61424dfb311e7b555201a068c6482', '角色管理', 'cfda8029dfb311e7b555201a068c6482', '/role/showRole', '3', '&#xe613;', null, '2017-12-29 14:40:36', null, '2017-12-29 14:40:36', 'role:show', '0');
-INSERT INTO `sys_menu` VALUES ('e2e43bb8dad34a1a951e92d974729308', '文章信息', '851a69a2be3245779ce53c1d26536487', '/article/showArticle', '2', '', 'acfc0e9232f54732a5d9ffe9071bf572', '2019-07-03 22:47:13', 'acfc0e9232f54732a5d9ffe9071bf572', '2019-07-03 22:56:18', 'article:show', '0');
 INSERT INTO `sys_menu` VALUES ('e3b11497eb9e11e7928d201a068c6482', '删除', 'cfe54921dfb311e7b555201a068c6482', '', null, '', 'acfc0e9232f54732a5d9ffe9071bf572', '2017-12-28 15:17:07', null, '2017-12-28 15:17:07', 'user:del', '1');
 INSERT INTO `sys_menu` VALUES ('e9a13e55f35911e7aca0201a068c6482', '定时任务', 'a1ca6642ec5e11e7a472201a068c6482', '/job/showJob', '3', '&#xe756;', 'acfc0e9232f54732a5d9ffe9071bf572', '2018-01-07 11:22:06', null, null, 'job:show', '0');
 INSERT INTO `sys_menu` VALUES ('ecda560cf36f11e7aca0201a068c6482', '启动', 'e9a13e55f35911e7aca0201a068c6482', null, '3', '', 'acfc0e9232f54732a5d9ffe9071bf572', '2018-01-07 13:59:41', null, null, 'job:start', '1');
 INSERT INTO `sys_menu` VALUES ('f23f6a6bf09511e78a57201a068c6482', '修改密码', 'cfe54921dfb311e7b555201a068c6482', null, '4', '', 'acfc0e9232f54732a5d9ffe9071bf572', '2018-01-03 22:54:06', null, null, 'user:repass', '1');
-INSERT INTO `sys_menu` VALUES ('f5265a9315a9481bba2a436a3430c22a', '更新', '8b472608bd8d4d209808c03cd6e6188b', null, '2', null, 'acfc0e9232f54732a5d9ffe9071bf572', '2019-06-23 15:57:41', null, null, 'hjPerson:update', '1');
 INSERT INTO `sys_menu` VALUES ('ff015ea5f09411e78a57201a068c6482', '编辑', 'cff61424dfb311e7b555201a068c6482', null, '2', '', 'acfc0e9232f54732a5d9ffe9071bf572', '2018-01-03 22:47:18', null, null, 'role:update', '1');
 
 -- ----------------------------
@@ -3571,6 +3589,7 @@ CREATE TABLE `sys_role` (
 -- Records of sys_role
 -- ----------------------------
 INSERT INTO `sys_role` VALUES ('2619a672e53811e7b983201a068c6482', 'admin', '管理员', 'acfc0e9232f54732a5d9ffe9071bf572', '2017-12-20 11:44:57', null, '2018-01-02 11:38:37');
+INSERT INTO `sys_role` VALUES ('c66aabd6c8f246a3b557ec66d958e654', '普通用户', '普通用户', 'acfc0e9232f54732a5d9ffe9071bf572', '2019-10-27 12:00:34', null, null);
 
 -- ----------------------------
 -- Table structure for `sys_role_menu`
@@ -3597,54 +3616,35 @@ INSERT INTO `sys_role_menu` VALUES ('0ea934e5e55411e7b983201a068c6482', '6dc13c6
 INSERT INTO `sys_role_menu` VALUES ('0ea934e5e55411e7b983201a068c6482', 'a1ca6642ec5e11e7a472201a068c6482');
 INSERT INTO `sys_role_menu` VALUES ('0ea934e5e55411e7b983201a068c6482', 'cfda8029dfb311e7b555201a068c6482');
 INSERT INTO `sys_role_menu` VALUES ('0ea934e5e55411e7b983201a068c6482', 'cfe54921dfb311e7b555201a068c6482');
-INSERT INTO `sys_role_menu` VALUES ('2619a672e53811e7b983201a068c6482', '0ddd69b2b761456e9f7028c2cf3a296d');
 INSERT INTO `sys_role_menu` VALUES ('2619a672e53811e7b983201a068c6482', '0e6c8d4cf09511e78a57201a068c6482');
 INSERT INTO `sys_role_menu` VALUES ('2619a672e53811e7b983201a068c6482', '18bf8d5df09511e78a57201a068c6482');
-INSERT INTO `sys_role_menu` VALUES ('2619a672e53811e7b983201a068c6482', '1fc42b542021460bb95cd86fb1930b00');
 INSERT INTO `sys_role_menu` VALUES ('2619a672e53811e7b983201a068c6482', '2b56410cf09411e78a57201a068c6482');
-INSERT INTO `sys_role_menu` VALUES ('2619a672e53811e7b983201a068c6482', '2b5af8ad3122454bb5e52bbf8da9b285');
 INSERT INTO `sys_role_menu` VALUES ('2619a672e53811e7b983201a068c6482', '3873ccc2dfda11e7b555201a068c6482');
 INSERT INTO `sys_role_menu` VALUES ('2619a672e53811e7b983201a068c6482', '433089a6eb0111e782d5201a068c6482');
-INSERT INTO `sys_role_menu` VALUES ('2619a672e53811e7b983201a068c6482', '4a3c40c973204a9f8549947ae7b4521b');
 INSERT INTO `sys_role_menu` VALUES ('2619a672e53811e7b983201a068c6482', '5ae3d4e9f38e11e7aca0201a068c6482');
 INSERT INTO `sys_role_menu` VALUES ('2619a672e53811e7b983201a068c6482', '6315968bf37111e7aca0201a068c6482');
-INSERT INTO `sys_role_menu` VALUES ('2619a672e53811e7b983201a068c6482', '64e46a9e67a54ea6a371c3aa30fe43a1');
 INSERT INTO `sys_role_menu` VALUES ('2619a672e53811e7b983201a068c6482', '6931fd22f09611e78a57201a068c6482');
 INSERT INTO `sys_role_menu` VALUES ('2619a672e53811e7b983201a068c6482', '69f3f59cf38e11e7aca0201a068c6482');
 INSERT INTO `sys_role_menu` VALUES ('2619a672e53811e7b983201a068c6482', '6dc13c6eec5f11e7a472201a068c6482');
-INSERT INTO `sys_role_menu` VALUES ('2619a672e53811e7b983201a068c6482', '6dd16375f859457789e44c36425000bb');
 INSERT INTO `sys_role_menu` VALUES ('2619a672e53811e7b983201a068c6482', '788d8e34f38e11e7aca0201a068c6482');
 INSERT INTO `sys_role_menu` VALUES ('2619a672e53811e7b983201a068c6482', '7967e098ee0611e7a60d201a068c6482');
-INSERT INTO `sys_role_menu` VALUES ('2619a672e53811e7b983201a068c6482', '851a69a2be3245779ce53c1d26536487');
 INSERT INTO `sys_role_menu` VALUES ('2619a672e53811e7b983201a068c6482', '873f30b0f38e11e7aca0201a068c6482');
 INSERT INTO `sys_role_menu` VALUES ('2619a672e53811e7b983201a068c6482', '88b8e5d1f38911e7aca0201a068c6482');
 INSERT INTO `sys_role_menu` VALUES ('2619a672e53811e7b983201a068c6482', '8a6c8bfa7f804eac810c5790cad9a62a');
-INSERT INTO `sys_role_menu` VALUES ('2619a672e53811e7b983201a068c6482', '8b472608bd8d4d209808c03cd6e6188b');
 INSERT INTO `sys_role_menu` VALUES ('2619a672e53811e7b983201a068c6482', 'a1ca6642ec5e11e7a472201a068c6482');
-INSERT INTO `sys_role_menu` VALUES ('2619a672e53811e7b983201a068c6482', 'b004be98ce4348f5b097f61f09067e63');
 INSERT INTO `sys_role_menu` VALUES ('2619a672e53811e7b983201a068c6482', 'b441914cee0811e7a60d201a068c6482');
-INSERT INTO `sys_role_menu` VALUES ('2619a672e53811e7b983201a068c6482', 'c96297c0a2294a9c99f856cc44eef85f');
-INSERT INTO `sys_role_menu` VALUES ('2619a672e53811e7b983201a068c6482', 'cf378a87acb6470991f5029077160671');
 INSERT INTO `sys_role_menu` VALUES ('2619a672e53811e7b983201a068c6482', 'cfda8029dfb311e7b555201a068c6482');
 INSERT INTO `sys_role_menu` VALUES ('2619a672e53811e7b983201a068c6482', 'cfe54921dfb311e7b555201a068c6482');
 INSERT INTO `sys_role_menu` VALUES ('2619a672e53811e7b983201a068c6482', 'cfe54921dfb311e7b555201a068c6483');
 INSERT INTO `sys_role_menu` VALUES ('2619a672e53811e7b983201a068c6482', 'cff61424dfb311e7b555201a068c6482');
-INSERT INTO `sys_role_menu` VALUES ('2619a672e53811e7b983201a068c6482', 'e2e43bb8dad34a1a951e92d974729308');
 INSERT INTO `sys_role_menu` VALUES ('2619a672e53811e7b983201a068c6482', 'e3b11497eb9e11e7928d201a068c6482');
 INSERT INTO `sys_role_menu` VALUES ('2619a672e53811e7b983201a068c6482', 'e9a13e55f35911e7aca0201a068c6482');
 INSERT INTO `sys_role_menu` VALUES ('2619a672e53811e7b983201a068c6482', 'ecda560cf36f11e7aca0201a068c6482');
 INSERT INTO `sys_role_menu` VALUES ('2619a672e53811e7b983201a068c6482', 'f23f6a6bf09511e78a57201a068c6482');
-INSERT INTO `sys_role_menu` VALUES ('2619a672e53811e7b983201a068c6482', 'f5265a9315a9481bba2a436a3430c22a');
 INSERT INTO `sys_role_menu` VALUES ('2619a672e53811e7b983201a068c6482', 'ff015ea5f09411e78a57201a068c6482');
 INSERT INTO `sys_role_menu` VALUES ('35f7934d335e4641b7887e4b3b1885a5', '18bf8d5df09511e78a57201a068c6482');
 INSERT INTO `sys_role_menu` VALUES ('35f7934d335e4641b7887e4b3b1885a5', '3873ccc2dfda11e7b555201a068c6482');
 INSERT INTO `sys_role_menu` VALUES ('35f7934d335e4641b7887e4b3b1885a5', 'cfda8029dfb311e7b555201a068c6482');
-INSERT INTO `sys_role_menu` VALUES ('4bb891d8caf84cc6ba27e515e80ac40d', '1fc42b542021460bb95cd86fb1930b00');
-INSERT INTO `sys_role_menu` VALUES ('4bb891d8caf84cc6ba27e515e80ac40d', '64e46a9e67a54ea6a371c3aa30fe43a1');
-INSERT INTO `sys_role_menu` VALUES ('4bb891d8caf84cc6ba27e515e80ac40d', '6dd16375f859457789e44c36425000bb');
-INSERT INTO `sys_role_menu` VALUES ('4bb891d8caf84cc6ba27e515e80ac40d', '851a69a2be3245779ce53c1d26536487');
-INSERT INTO `sys_role_menu` VALUES ('4bb891d8caf84cc6ba27e515e80ac40d', 'cf378a87acb6470991f5029077160671');
-INSERT INTO `sys_role_menu` VALUES ('4bb891d8caf84cc6ba27e515e80ac40d', 'e2e43bb8dad34a1a951e92d974729308');
 INSERT INTO `sys_role_menu` VALUES ('a56219ffeb7d11e7928d201a068c6482', '433089a6eb0111e782d5201a068c6482');
 INSERT INTO `sys_role_menu` VALUES ('a56219ffeb7d11e7928d201a068c6482', 'cfda8029dfb311e7b555201a068c6482');
 INSERT INTO `sys_role_menu` VALUES ('a56219ffeb7d11e7928d201a068c6482', 'cfe54921dfb311e7b555201a068c6482');
@@ -3689,11 +3689,14 @@ CREATE TABLE `sys_user` (
   `create_date` datetime DEFAULT NULL,
   `update_date` datetime DEFAULT NULL,
   `del_flag` tinyint(4) NOT NULL DEFAULT '0' COMMENT '0可用1封禁',
+  `phone` varchar(20) DEFAULT NULL COMMENT '手机号码',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of sys_user
 -- ----------------------------
-INSERT INTO `sys_user` VALUES ('acfc0e9232f54732a5d9ffe9071bf572', 'admin', 'e0b141de1c8091be350d3fc80de66528', '24', '', 'da39b16c-6b7a-4a91-8594-b58601f2ba09.jpg', '管理员', null, 'acfc0e9232f54732a5d9ffe9071bf572', '2017-12-20 16:34:06', '2019-10-25 22:15:39', '0');
-INSERT INTO `sys_user` VALUES ('c7f1a7d7018311e8a1a2201a068c6482', '666', 'c6953f608430df414ea52e8c01b81a45', '24', '', '', '666', 'acfc0e9232f54732a5d9ffe9071bf572', 'acfc0e9232f54732a5d9ffe9071bf572', '2018-01-25 11:56:54', '2018-06-14 23:18:51', '1');
+INSERT INTO `sys_user` VALUES ('1029d51781b645ddab1584b225d1b8cf', 'djl', 'adf041581860e96938b2c5ac9317b589', '23', null, '6f983174-33be-4cc9-a3b9-0b636db4b3ff.png', '董锦龙', 'acfc0e9232f54732a5d9ffe9071bf572', 'acfc0e9232f54732a5d9ffe9071bf572', '2019-10-27 11:59:23', '2019-10-27 12:26:52', '0', '15323748679');
+INSERT INTO `sys_user` VALUES ('2261f6f3b6c749e5b075e8113508d58c', 'DDDD', 'f37ffa1c1dcb4bed23ca15f26d57c9e3', '12', null, null, 'ZZ', 'acfc0e9232f54732a5d9ffe9071bf572', null, '2019-10-27 12:06:17', null, '0', '15323878787');
+INSERT INTO `sys_user` VALUES ('acfc0e9232f54732a5d9ffe9071bf572', 'admin', 'e0b141de1c8091be350d3fc80de66528', '24', '904118787@qq.com', 'ea256361-de4a-4a5e-8cfb-3d56e955cfdb.png', '管理员', null, 'acfc0e9232f54732a5d9ffe9071bf572', '2017-12-20 16:34:06', '2019-10-27 12:45:35', '0', '15323748679');
+INSERT INTO `sys_user` VALUES ('c7f1a7d7018311e8a1a2201a068c6482', '666', 'c6953f608430df414ea52e8c01b81a45', '24', '', '', '666', 'acfc0e9232f54732a5d9ffe9071bf572', 'acfc0e9232f54732a5d9ffe9071bf572', '2018-01-25 11:56:54', '2018-06-14 23:18:51', '1', null);
